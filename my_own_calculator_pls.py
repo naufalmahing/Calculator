@@ -27,7 +27,18 @@ def hitungpostfix(array):
             stack.append(element)
     return stack[0]
 
-formula = (input('Masukkan formula yang ingin dihitung: \n'))
+formula = ''
+run = True
+while True:
+    if run:
+        formula = (input('Masukkan formula yang ingin dihitung: \n'))
+        print(hitungpostfix(ctp.infixtopostfix_splitted(ctp.split(formula))))
+    exit = input('Masukkan y/n untuk lanjut/keluar: ')
+    if str.lower(exit) == 'n':
+        break
+    elif str.lower(exit) != 'y':
+        run = False
+    elif str.lower(exit) == 'y':
+        run = True     
 
-print(hitungpostfix(ctp.infixtopostfix_splitted(ctp.split(formula))))
 
