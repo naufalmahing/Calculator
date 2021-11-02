@@ -27,10 +27,7 @@ def hitungpostfix(array):
             stack.append(element)
     return stack[0]
 
-stack = ['20', '10', '+', '50', '*']
-print(hitungpostfix(stack))
+formula = (input('Masukkan formula yang ingin dihitung: \n'))
 
-print(hitungpostfix(ctp.infixtopostfix_splitted(ctp.split('(20+10)*50'))))
-print(hitungpostfix(ctp.infixtopostfix_splitted(ctp.split('(20+10)/50'))))
-print(hitungpostfix(ctp.infixtopostfix_splitted(ctp.split('20+10*50'))))
+print(hitungpostfix(ctp.infixtopostfix_splitted(ctp.split(formula))))
 

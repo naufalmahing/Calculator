@@ -71,7 +71,6 @@ def infixtopostfix_splitted(s):
                     elif len(stack) == 1:
                         break
                     else:
-                        print("jalan " + peek(stack))
                         postfix += stack.pop()
             elif higherorequalpriority(peek(stack), c):
                 postfix.append(stack.pop())
@@ -97,18 +96,12 @@ def infixtopostfix(s):
                     elif len(stack) == 1:
                         break
                     else:
-                        print("jalan " + peek(stack))
                         postfix += stack.pop()
             elif higherorequalpriority(peek(stack), c):
-                print("pop " + peek(stack))
                 postfix += stack.pop()
                 stack.append(c)
-                print("tambah lebih tinggi " + c)
             elif not higherorequalpriority(peek(stack), c):
                 stack.append(c)
-                print("tambah lebih rendah " + c)
         else:
             postfix += c
-        print(c)
-    print(stack)
     return postfix
